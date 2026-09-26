@@ -1,0 +1,338 @@
+/* =================================================================
+   1. RESET GENERAL Y VARIABLES
+   ================================================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #fcd6b8; /* Color base gris claro/azulado */
+    color: hsl(0, 0%, 0%);
+    line-height: 1.6;
+}
+
+/* =================================================================
+   2. HEADER Y NAVEGACIÓN
+   ================================================================= */
+.ContHead {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #970d0d;
+    padding: 20px 50px;
+    flex-wrap: wrap;
+}
+
+.logo-titulo {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.logo-titulo img {
+    width: 150px;
+    height: auto;
+}
+
+.titulo-slogan {
+    display: flex;
+    flex-direction: column;
+}
+
+.titulo-slogan h1 {
+    color: white;
+    font-size: 3rem;
+    margin-bottom: 5px;
+}
+
+.slogan {
+    color: #d9e6f2;
+    font-style: italic;
+    font-size: 1.1rem;
+}
+
+.menu {
+    display: flex;
+    gap: 20px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 10px 18px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.menu a:hover {
+    background-color: white;
+    color: #000000;
+}
+
+/* =================================================================
+   3. CONTENIDO PRINCIPAL Y SECCIONES GENERALES
+   ================================================================= */
+main {
+    width: 85%;
+    max-width: 1200px;
+    margin: 40px auto;
+}
+
+.bienvenida {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.bienvenida h2 {
+    color: #440c0c;
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.bienvenida p {
+    font-size: 1.1rem;
+}
+
+.razones,
+.justificacion {
+    background-color: white;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.15);
+}
+
+.razones h3,
+.justificacion h3 {
+    color: #440c0c;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.razones ul {
+    padding-left: 20px;
+}
+
+.razones li {
+    margin-bottom: 15px;
+}
+
+.justificacion p {
+    text-align: justify;
+    font-size: 1.05rem;
+}
+
+/* =================================================================
+   4. ORGANIGRAMA Y MAPA
+   ================================================================= */
+.organigrama {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.organigrama img {
+    width: 100%;
+    max-width: 900px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.2);
+}
+
+.mapa {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.mapa iframe {
+    width: 100%;
+    max-width: 900px;
+    height: 450px;
+    border: 0;
+    border-radius: 12px;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.2);
+}
+
+/* =================================================================
+   5. NUEVA GALERÍA DE CONTENIDO (FUERA DE TEMA)
+   ================================================================= */
+.contenido-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 30px;
+    align-items: start;
+}
+
+/* Contenedor principal de cada tarjeta */
+.tarjeta-contenido {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Evita que la imagen se salga de los bordes redondeados */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.tarjeta-contenido:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Imagen dentro de la tarjeta */
+.tarjeta-contenido img {
+    width: 100%;
+    height: 250px;
+    object-fit: contain; /* Ajusta la imagen sin recortarla */
+    background-color: #ffffff;
+    padding: 15px;
+    border-bottom: 2px solid #f4f6f9;
+}
+
+/* Contenedor del texto dentro de la tarjeta */
+.tarjeta-info {
+    padding: 20px;
+}
+
+.tarjeta-info h3 {
+    color: #440c0c;
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+.tarjeta-info p {
+    font-size: 0.95rem;
+    color: #444;
+    text-align: justify;
+    line-height: 1.5;
+}
+
+/* =================================================================
+   7. FOOTER
+   ================================================================= */
+footer {
+    background-color: #661e24;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+/* =================================================================
+   8. RESPONSIVE DESIGN (Móviles y Tablets unificados)
+   ================================================================= */
+@media (max-width: 900px) {
+    /* Galería pasa a 2 columnas en Tablets */
+    .contenido-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    /* Header Responsive */
+    .ContHead {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .logo-titulo {
+        flex-direction: column;
+    }
+
+    .logo-titulo img {
+        width: 120px;
+    }
+
+    .titulo-slogan h1 {
+        font-size: 2.2rem;
+    }
+
+    .menu {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    main {
+        width: 95%;
+    }
+}
+
+@media (max-width: 600px) {
+    /* Galería pasa a 1 columna en Celulares */
+    .contenido-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .tarjeta-contenido img {
+        height: auto;
+        max-height: 300px;
+    }
+}
+
+/* =================================================================
+   9. SECCIÓN DE VIDEOS FUERA DE TEMA (NUEVO)
+   ================================================================= */
+.titulo-seccion-videos {
+    text-align: center;
+    color: #1e3a5f;
+    margin: 60px 0 30px;
+    font-size: 2rem;
+    width: 100%;
+}
+
+/* Contenedor para centrar el video principal */
+.contenedor-video-principal {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+    width: 100%;
+}
+
+/* Tarjeta del video principal (Más grande) */
+.video-destacado {
+    width: 100%;
+    max-width: 900px; /* Hace que la entrevista sea muy amplia */
+}
+
+.video-destacado video {
+    width: 100%;
+    height: 450px; /* Más alto que el resto */
+    background: #000;
+    object-fit: contain;
+    border-bottom: 2px solid #f4f6f9;
+}
+
+/* Grid especial para las 4 animaciones (2 columnas x 2 filas) */
+.grid-animaciones {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 1000px; /* Ancho máximo para que se vean bien juntas */
+    margin: 0 auto 40px; 
+}
+
+.grid-animaciones .tarjeta-contenido video {
+    width: 100%;
+    height: 250px;
+    background: #000;
+    object-fit: contain;
+    border-bottom: 2px solid #f4f6f9;
+}
+
+/* Responsive para la nueva sección de videos */
+@media (max-width: 768px) {
+    .grid-animaciones {
+        grid-template-columns: 1fr; /* Pasa a 1 sola columna en celular */
+    }
+    .video-destacado video {
+        height: 300px; /* Reduce un poco la altura en celulares */
+    }
+}
